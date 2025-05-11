@@ -39,7 +39,7 @@ void calculEroare() {
         if ( ___SA0 < 250 )
            ___eroare = 1;
         
-           // delay(5); nu imbunatateste
+
             if( ___SA4 < 250 )
               ___eroare = -1;
         
@@ -51,42 +51,42 @@ void calculEroare() {
 void controlMotoare() {
    
     if ( ___eroare == 2 ) {
-      digitalWrite(_output_PD4, 0); //stanga inapoi
-    digitalWrite(_output_PD5, 1);//stanga fata
-    digitalWrite(_output_PD6, 1);// dreapta fata
-    digitalWrite(_output_PD7, 0);//dreapta inapoi
-        analogWrite(_output_PWM9, 0); //dreapta
-        analogWrite(_output_PWM10, 0); //stanga
+      digitalWrite(_output_PD4, 0); 
+    digitalWrite(_output_PD5, 1);
+    digitalWrite(_output_PD6, 1);
+    digitalWrite(_output_PD7, 0);
+        analogWrite(_output_PWM9, 0); 
+        analogWrite(_output_PWM10, 0); 
     }
 
     if ( ___eroare == 0 ) {
-      digitalWrite(_output_PD4, 0); //stanga inapoi
-    digitalWrite(_output_PD5, 1);//stanga fata
-    digitalWrite(_output_PD6, 1);// dreapta fata
-    digitalWrite(_output_PD7, 0);//dreapta inapoi
-        analogWrite(_output_PWM9, 100); //dreapta
-        analogWrite(_output_PWM10, 90); //stanga
+      digitalWrite(_output_PD4, 0); 
+    digitalWrite(_output_PD5, 1);
+    digitalWrite(_output_PD6, 1);
+    digitalWrite(_output_PD7, 0);
+        analogWrite(_output_PWM9, 100); 
+        analogWrite(_output_PWM10, 90); 
     } 
     
-        if ( ___eroare == -1) {//v dreapta
-          digitalWrite(_output_PD4, 0);// s i
-    digitalWrite(_output_PD5, 1);// s f
-    digitalWrite(_output_PD6, 0);// d f
-    digitalWrite(_output_PD7, 1);// d i
-            analogWrite(_output_PWM9, 12);//inapoi
+        if ( ___eroare == -1) {
+          digitalWrite(_output_PD4, 0);
+    digitalWrite(_output_PD5, 1);
+    digitalWrite(_output_PD6, 0);
+    digitalWrite(_output_PD7, 1);
+            analogWrite(_output_PWM9, 12);
             analogWrite(_output_PWM10, 85);
            
             
         }
-      //  delay(5);
+      
         
-       if( ___eroare == 1) {//v stanga
+       if( ___eroare == 1) {
           digitalWrite(_output_PD4, 1);
     digitalWrite(_output_PD5, 0);
     digitalWrite(_output_PD6, 1);
     digitalWrite(_output_PD7, 0);
             analogWrite(_output_PWM9, 95);
-            analogWrite(_output_PWM10, 12);//inapoi
+            analogWrite(_output_PWM10, 12);
               
         }
         
